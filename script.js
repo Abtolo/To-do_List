@@ -2,8 +2,16 @@
 
 const theButton = document.querySelector(".btn");
 const input = document.querySelector(".theTask");
-const tasks = document.querySelector(".thetasks");
 
 theButton.addEventListener("click", function () {
-  console.log("it's working ");
+  let tasks = document.querySelector(".thetasks");
+  let createTask = document.createElement("li");
+  let createButton = document.createElement("button");
+  createButton.textContent = "❌";
+
+  createTask.textContent = input.value;
+
+  tasks.appendChild(createTask);
+  tasks.appendChild(createButton);
+  input.value = "";
 });
