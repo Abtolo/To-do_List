@@ -1,34 +1,47 @@
 body {
-  background-color: antiquewhite;
+  color: #2d2d44;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
 }
 
 .alltasks {
+  color: #2d2d44;
+  padding: 5px;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  background-color: coral;
+  border: 2px solid black;
   height: 500px;
+  box-shadow: rgb(177, 176, 176) 5px 5px;
 }
 
 .task {
   text-align: center;
 }
 
-.listElements {
-  padding: 2px;
-}
-
 .new-task {
+  display: inline-block;
   font-size: large;
 }
 
+.taskDiv {
+  background-color: aliceblue;
+  box-shadow: rgb(180, 180, 180) 2px 2px;
+  margin: 5px;
+  width: auto;
+}
+
 .new-btn {
-  display: inline;
-  background-color: coral;
-  border: 1px none coral;
+  float: right;
+  background-color: aliceblue;
+  border: 1px none white;
   margin-left: 5px;
+}
+
+.display {
+  display: none;
 }
