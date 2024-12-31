@@ -31,6 +31,10 @@ theButton.addEventListener("click", function () {
   }
 });
 
+createButton.addEventListener("click", () => {
+  createTask.classList.toggle("completed");
+});
+
 removebtn.addEventListener("click", function () {
   document.querySelector(".taskDiv").classList.add(".display");
 });

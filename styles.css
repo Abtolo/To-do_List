@@ -45,3 +45,8 @@ h2 {
 .display {
   display: none;
 }
+
+.completed {
+  text-decoration: line-through;
+  color: grey;
+}
