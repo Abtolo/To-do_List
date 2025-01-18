@@ -8,11 +8,11 @@ theButton.addEventListener("click", function () {
   if (input.value === "") {
     alert("You didn't  write a task");
   } else {
-    let theDiv = document.createElement("div");
     let tasks = document.querySelector(".thetasks");
-    let createTask = document.createElement("li");
-    let createButton = document.createElement("button");
-    let createCheckbox = document.createElement("input");
+    let theDiv = document.createElement("div"); // the box in which the new task appears
+    let createTask = document.createElement("li"); // the task thats created (in list format)
+    let createButton = document.createElement("button"); // button that will remove the task
+    let createCheckbox = document.createElement("input"); // the checkbox
 
     theDiv.setAttribute("class", "taskDiv");
     createCheckbox.setAttribute("type", "checkbox");
@@ -29,12 +29,18 @@ theButton.addEventListener("click", function () {
     tasks.appendChild(theDiv);
     input.value = "";
   }
-});
 
-createButton.addEventListener("click", () => {
-  createTask.classList.toggle("completed");
-});
+  // Add event listener to checkbox to toggle task completion
+  createCheckbox.addEventListener("change", function () {
+    if (createCheckbox.checked) {
+      createTask.classList.add(".completed"); // Add completed class
+    } else {
+      createTask.classList.remove(".completed"); // Remove completed class
+    }
+  });
 
-removebtn.addEventListener("click", function () {
-  document.querySelector(".taskDiv").classList.add(".display");
+  // Add event listener to the remove button
+  createButton.addEventListener("click", function () {
+    tasks.removeChild(theDiv);
+  });
 });
