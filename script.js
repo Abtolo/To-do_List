@@ -20,7 +20,6 @@ theButton.addEventListener("click", function () {
     createButton.textContent = "❌";
     createTask.setAttribute("type", "checkbox");
     createTask.setAttribute("class", "new-task");
-
     createTask.textContent = input.value;
 
     theDiv.appendChild(createCheckbox);
@@ -28,19 +27,19 @@ theButton.addEventListener("click", function () {
     theDiv.appendChild(createButton);
     tasks.appendChild(theDiv);
     input.value = "";
+
+    // Add event listener to checkbox to toggle task completion
+    createCheckbox.addEventListener("change", function () {
+      if (createCheckbox.checked) {
+        createTask.classList.add("completed"); // Add completed class
+      } else {
+        createTask.classList.remove("completed"); // Remove completed class
+      }
+    });
+
+    // Add event listener to the remove button
+    createButton.addEventListener("click", function () {
+      tasks.removeChild(theDiv);
+    });
   }
-
-  // Add event listener to checkbox to toggle task completion
-  createCheckbox.addEventListener("change", function () {
-    if (createCheckbox.checked) {
-      createTask.classList.add(".completed"); // Add completed class
-    } else {
-      createTask.classList.remove(".completed"); // Remove completed class
-    }
-  });
-
-  // Add event listener to the remove button
-  createButton.addEventListener("click", function () {
-    tasks.removeChild(theDiv);
-  });
 });
